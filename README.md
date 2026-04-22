@@ -60,4 +60,3 @@ When deploying, make sure to add your `GROQ_API_KEY` to the Environment Variable
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
-
