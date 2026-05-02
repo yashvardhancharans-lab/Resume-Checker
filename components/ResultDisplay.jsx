@@ -11,7 +11,7 @@ function ScoreGauge({ score }) {
     if (s >= 80) return "#10B981";
     if (s >= 60) return "#F59E0B";
     if (s >= 40) return "#F97316";
-    return "#EF4444";
+    return "#d85050ff";
   };
 
   const getLabel = (s) => {
