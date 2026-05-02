@@ -154,7 +154,35 @@ export default function MarketInsights() {
               <h4 style={{ fontSize: "18px", fontWeight: 700, color: "var(--text-primary)", marginBottom: "20px" }}>Trending Skills</h4>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
                 {data.trendingSkills?.map((skill, i) => (
-                  <span key={i} className="animate-scale-in" style={{ animationDelay: `${i * 0.05}s`, padding: "6px 14px", background: "var(--primary-50)", color: "var(--primary)", borderRadius: "8px", fontSize: "13px", fontWeight: 600, border: "1px solid var(--primary-100)" }}>
+                  <span 
+                    key={i} 
+                    className="animate-scale-in" 
+                    onClick={() => {
+                      setRole(skill);
+                      setInputValue(skill);
+                      fetchInsights(skill);
+                    }}
+                    style={{ 
+                      animationDelay: `${i * 0.05}s`, 
+                      padding: "6px 14px", 
+                      background: "var(--primary-50)", 
+                      color: "var(--primary)", 
+                      borderRadius: "8px", 
+                      fontSize: "13px", 
+                      fontWeight: 600, 
+                      border: "1px solid var(--primary-100)",
+                      cursor: "pointer",
+                      transition: "all 0.2s"
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.background = "var(--primary)";
+                      e.target.style.color = "white";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.background = "var(--primary-50)";
+                      e.target.style.color = "var(--primary)";
+                    }}
+                  >
                     {skill}
                   </span>
                 ))}
